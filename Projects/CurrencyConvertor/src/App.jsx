@@ -9,9 +9,10 @@ function App() {
   const [toCurrency, setToCurrency] = useState("INR");
   const [convertedAmount, setConvertedAmount] = useState(0);
 
-  const currencyInfo = useCurrencyInfo(fromCurrency);
-  const options = Object.keys(currencyInfo);
-
+  const currencyInfo = useCurrencyInfo(fromCurrency);       //Selected currency is passing to useCurrencyInfo function and which returns all currencies Type and Value as a data.
+  const options = Object.keys(currencyInfo);  //Extracting the Types of currencies which are return from useCurrencyInfo function
+  //Now options contains the list of currencies
+  //Swap swaps the type of currency and their calculated amount also
   const swap = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
@@ -20,7 +21,8 @@ function App() {
   };
 
   const convert = () => {
-    if (currencyInfo[toCurrency]) {
+    if (currencyInfo[toCurrency])
+    {
       setConvertedAmount(amount * currencyInfo[toCurrency]);
     }
   };
