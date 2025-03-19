@@ -36,7 +36,7 @@ function App() {
     >
       <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 
   backdrop-blur-sm bg-white/30 transition duration-300 ease-in-out 
-  hover:scale-105">
+  hover:scale-105"> 
 
         <form
           onSubmit={(e) => {
