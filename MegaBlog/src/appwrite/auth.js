@@ -1,4 +1,4 @@
-import conf from "../conf/config.js"
+import conf from "../conf/conf.js"
 import { Client, Account, ID } from "appwrite";
 
 //whenever we have to use this class, we have to create the object of class so instead of exporting class we are exporting class's object
