@@ -8,4 +8,8 @@ const config = {
     appwriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
 }
 
+if (!config.appwriteUrl || !config.appwriteProjectId)
+{
+    console.error("⚠️ Missing required Appwrite environment variables!");
+}
 export default config

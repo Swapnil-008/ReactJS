@@ -1,11 +1,11 @@
 import conf from "../conf/conf.js"
 import { Client, Account, ID } from "appwrite";
-
+console.log("Appwrite Config:", conf);
 //whenever we have to use this class, we have to create the object of class so instead of exporting class we are exporting class's object
 // and all the methods are aplicable on account only that's why we have to create account
 export class AuthService {
     client = new Client()
-    account
+    account;
     //we are defining account in constructor, because we need account when we have object
     constructor() {
         this.client
@@ -46,16 +46,18 @@ export class AuthService {
         }
     }
 
-    async getCurrentUser()
-    {
-        try{
-            return await this.account.get()
-        }
-        catch(error)
+    async getCurrentUser() {
+        try {
+            const user = await this.account.get();
+            console.log("User data:", user);
+            return user;
+        } catch (error)
         {
-            throw error
+            console.error("Failed to get user:", error.message);
+            return null;
         }
     }
+    
 
     async logout()
     {
