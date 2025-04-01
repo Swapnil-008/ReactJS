@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl flex flex-col items-center justify-center;
+}
+
+.nav-link {
+  @apply text-white hover:text-yellow-300 transition-colors font-medium;
+}
+
+.input-field {
+  @apply w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all;
+}
+
+.button {
+  @apply w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors font-medium;
+}
+
+/* Add padding to main content to account for fixed header */
+main {
+  padding-top: 80px; /* Adjust based on header height */
+  padding-bottom: 60px; /* Adjust based on footer height */
+}
